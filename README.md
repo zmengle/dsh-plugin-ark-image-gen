@@ -88,6 +88,15 @@ setx ARK_API_KEY "ark-xxxx"
 - 本地参考图会转成 base64 data URL 发送——**大图会显著增加请求体体积**。
 - 默认模型名可能随火山方舟下线调整，遇到 404 用 `model` 参数或 `ARK_MODEL` 指定当前可用模型。
 
+## 安全
+
+- 密钥**只从环境变量 `ARK_API_KEY` 或插件 `config.apiKey` 读取**，不写入任何文件、不进日志、不进 `manifest.json`。
+- `ark_image_gen_status` 只报告「已配置（长度 N）」，**不显示密钥片段的任何字符**。
+- 密钥随 `Authorization` 头发送，所以 `baseUrl` **必须是 https**；明文 `http` 只允许 `localhost` / `127.0.0.1` / `[::1]` 的本机调试，其他地址直接拒绝。
+- 报错只带 HTTP 状态码和响应体前 400 字符，不回显请求头。
+- 把密钥写进 profile 补丁时用 `!!js process.env.ARK_API_KEY`，不要写明文——补丁文件是会进 Git 的。
+- 参考图会以 base64 data URL 随请求发送，图片越大请求体越大，注意不要顺手把含隐私的截图发出去。
+
 ## 许可
 
 MIT
