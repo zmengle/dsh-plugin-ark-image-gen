@@ -1,0 +1,49 @@
+{
+  "name": "dsh-plugin-ark-image-gen",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "火山方舟 / 豆包 Seedream 生图插件：ark_generate_image / ark_image_gen_status 两个模型工具 + 内置 ark-image-gen 技能。密钥只读环境变量或插件配置。",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zmengle/dsh-plugin-ark-image-gen.git"
+  },
+  "homepage": "https://github.com/zmengle/dsh-plugin-ark-image-gen#readme",
+  "bugs": {
+    "url": "https://github.com/zmengle/dsh-plugin-ark-image-gen/issues"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0 <5.0.0",
+    "@deepseek-ai/dsh-skill": ">=0.1.0-rc.1 <0.2.0-0 || >=0.2.1-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.1 <0.2.0-0 || >=0.2.1-rc.1 <0.3.0-0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "ark",
+    "volcano",
+    "doubao",
+    "seedream",
+    "image-generation"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+# 本地插件：注册 ark-image-gen 的生图工具 + 内置技能。
+# config 留空 → 密钥从环境变量 ARK_API_KEY 读取（推荐）。
+# 也可显式写入（不要在这里硬编码密钥明文）：
+#   config:
+#     apiKey: !!js process.env.ARK_API_KEY
+#     model: doubao-seedream-5-0-flash-260915
+#     outDir: !!js path.join(process.cwd(), 'ark-output')
+- insert:
+    - id: ark-image-gen
+      name: dsh-plugin-ark-image-gen
+      config: {}
