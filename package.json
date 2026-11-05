@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-ark-image-gen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "火山方舟 / 豆包 Seedream 生图插件：ark_generate_image / ark_image_gen_status 两个模型工具 + 内置 ark-image-gen 技能。密钥只读环境变量或插件配置。",
   "repository": {
